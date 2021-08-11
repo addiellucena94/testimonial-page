@@ -1,0 +1,135 @@
+:root {
+    --moderate-violet: hsl(263, 55%, 52%);
+    --grayish-blue: hsl(217, 19%, 35%);
+    --blackish-blue: hsl(219, 29%, 14%);
+    --white-color: hsl(0, 0%, 100%);
+
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish: hsl(210, 46%, 95%);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--light-grayish);
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 13px;
+}
+
+section {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 2em;
+}
+
+.comment {
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.user-info {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.user-info img {
+    border-radius: 50%;
+    border: solid 3px;
+}
+
+.name-data {
+    margin-left: 15px;
+}
+
+h2 {
+    margin: 20px 0;
+    font-weight: 600;
+    font-size: 1.8em;
+}
+
+.comment-1 {
+    background-color: var(--moderate-violet);
+    color: var(--white-color);
+}
+
+.comment-2 {
+    background-color: var(--grayish-blue);
+    color: var(--white-color);
+}
+
+.comment-3 {
+    background-color: var(--white-color);
+    color: var(--grayish-blue);
+}
+
+.comment-4 {
+    background-color: var(--blackish-blue);
+    color: var(--white-color);
+}
+
+.comment-4 .user-info img {
+    border-color: var(--moderate-violet);
+}
+
+.comment-5 {
+    background-color: var(--white-color);
+    color: var(--grayish-blue);
+}
+
+.verified {
+    opacity: .5;
+}
+
+.testimonial {
+    opacity: .7;
+    line-height: 1.8em;
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        padding: 50px;
+    }
+
+    section {
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 2em;
+        grid-template-rows: repeat(2, 1fr);
+        grid-row-gap: 2em;
+        grid-template-areas: 
+            "comment-1 comment-1 comment-2 comment-5"
+            "comment-3 comment-4 comment-4 comment-5";
+    }
+
+    .comment-1 {
+       grid-area: comment-1;
+    }
+
+    .comment-2 {
+        grid-area: comment-2;
+    }
+
+    .comment-3 {
+        grid-area: comment-3;
+    }
+
+    .comment-4 {
+        grid-area: comment-4;
+    }
+
+    .comment-5 {
+        grid-area: comment-5;
+    }
+}
